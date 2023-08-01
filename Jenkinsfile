@@ -26,6 +26,14 @@ pipeline{
 				sh 'docker push bossmanjerry/soso_nodeapp:latest'
 			}
 		}
+        stage("Deploy") {
+            steps {
+                echo "Deploying the container"
+                sh "docker-compose down"
+                sh "docker-compose pull" // Pull the latest images
+                sh "docker-compose up -d" // Start the services in detached mode
+            }
+        }
 	}
 	post {
 		always {
