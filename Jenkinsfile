@@ -24,7 +24,6 @@ pipeline{
 		stage('Push') {
 			steps {
 				sh 'docker push bossmanjerry/soso_nodeapp:latest'
-                sh "docker-compose down && docker-compose up -d"
 			}
 		}
 	}
