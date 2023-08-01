@@ -5,7 +5,16 @@ pipeline{
 	}
 
 	stages {
-	    
+	    stage('verify tools') {
+			steps {
+				sh '''
+                    docker info
+                    docker version
+                    docker compose version
+                    curl -- version
+                '''
+			}
+		}
 	    stage('gitclone') {
 			steps {
 				git url: "https://github.com/Gerardbulky/flask-jenkins.git", branch: "main"
