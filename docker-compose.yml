@@ -1,4 +1,4 @@
-version: '3.9'
+version: '1.25.3'
 services:
   web:
     image: bossmanjerry/soso_nodeapp:latest
