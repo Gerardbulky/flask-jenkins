@@ -13,7 +13,7 @@ pipeline{
 		}
 		stage('Build') {
 			steps {
-				sh 'docker build --no-cache -t bossmanjerry/soso_nodeapp:latest .'
+				sh 'docker build -t bossmanjerry/soso_nodeapp:latest .'
 			}
 		}
 		stage('Login') {
